@@ -64,9 +64,27 @@ postcondition {
 
 ## Prerequisites
 
-- [Terraform](https://developer.hashicorp.com/terraform/downloads) >= 1.2 (preconditions/postconditions require Terraform 1.2+)
+- [Terraform](https://developer.hashicorp.com/terraform/downloads) >= 1.14 and < 2.0
 - `bash` and standard Unix utilities (used by the external data source)
 - `make`
+
+## Dependency Pinning
+
+The project declares its dependency constraints in `versions.tf` and pins
+registry modules in their individual `module` blocks:
+
+| Dependency type | Dependency | Constraint |
+|-----------------|------------|------------|
+| Terraform CLI | Terraform | `>= 1.14, < 2.0.0` |
+| Provider | `hashicorp/external` | `= 2.4.0` |
+| Provider | `hashicorp/null` | `= 3.3.0` |
+| Provider | `hashicorp/random` | `= 3.9.0` |
+| Module | `cloudposse/module/example` | `3.0.1` |
+
+The example module uses only the local `random` provider and does not require
+cloud credentials. Run `terraform init` after changing any dependency version,
+and commit `.terraform.lock.hcl` so provider selections and checksums remain
+repeatable.
 
 ## Usage
 
@@ -123,6 +141,7 @@ make postcondition-success
 | `echo` | Full result map from the external data source |
 | `echo_foo` | The `foo` key from the external data source result |
 | `null_resource_triggers` | The `triggers` map of the null resource, useful for verifying recreation on every apply |
+| `module_example` | Example value produced by the exactly pinned Cloud Posse module |
 
 ## License
 

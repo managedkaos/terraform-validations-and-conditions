@@ -10,3 +10,8 @@ output "echo_foo" {
 output "null_resource_triggers" {
   value = null_resource.example.triggers
 }
+
+output "module_example" {
+  description = "Output from the exactly pinned Cloud Posse example module."
+  value       = module.example.example
+}
