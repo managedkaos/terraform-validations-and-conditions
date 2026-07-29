@@ -1,7 +1,7 @@
 # Demo Walkthrough
 
-Use the targets in this order to follow the chapter discussion from
-production-grade modules through Terraform escape hatches.
+> [!TIP]
+> The following commands use [`bat`](https://github.com/sharkdp/bat) to view files. If you don't have `bat` installed, use `less -N` instead.
 
 ## Discussion
 
@@ -12,13 +12,14 @@ Start in the project root.
 | 1 | Show the files | `ls` |
 | 2 | Discuss version pinning | `bat versions.tf` |
 | 3 | Discuss module pinning | `bat modules.tf` |
-| 4 | Present the root module | `bat main.tf` |
-| 5 | Discuss external data sources | `data "external" "echo"` |
-| 6 | Discuss `null_resource` | `resource "null_resource" "example"` |
-| 7 | Discuss `triggers` | `triggers = { uuid = uuid()` |
-| 8 | Discuss `precondition` | `condition = var.minimum_replicas <= var.maximum_replicas` |
-| 9 | Discuss `postcondition` | `condition = self.triggers.environment == var.environment` |
-| 10 | Discuss `local-exec` provisioner | `provisioner "local-exec" {` |
+| 5 | Discuss the variables | `bat variables.tf` |
+| 6 | Present the root module | `vim main.tf` |
+| 7 | Discuss external data sources | `data "external" "echo"` |
+| 8 | Discuss `null_resource` | `resource "null_resource" "example"` |
+| 9 | Discuss `triggers` | `triggers = { uuid = uuid()` |
+| 10| Discuss `precondition` | `condition = var.minimum_replicas <= var.maximum_replicas` |
+| 11| Discuss `postcondition` | `condition = self.triggers.environment == var.environment` |
+| 12 | Discuss `local-exec` provisioner | `provisioner "local-exec" {` |
 
 ## Demonstration
 
