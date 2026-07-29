@@ -36,7 +36,6 @@ precondition-failure: ## Test rejection of invalid replica limits
 
 postcondition-success: ## Apply and pass the resource postcondition
 	$(TF) apply -input=false -auto-approve -var='environment=production'
-	$(TF) output null_resource_triggers
 
 output-triggers: ## Show the current null resource triggers
 	$(TF) output null_resource_triggers

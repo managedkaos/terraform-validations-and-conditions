@@ -43,14 +43,14 @@ Consider the following points for each [`Makefile`](./Makefile) target.
 | --- | ------------ | -------- |
 | 1 | Orient the audience to the available demonstrations | `make help` |
 | 2 | Initialize Terraform and install the pinned providers and example module | `make init` |
-| 3 | Introduce input variables, module composition, outputs, and the valid baseline configuration | `make plan` |
-| 4 | Demonstrate an input validation that restricts a variable to an allowed set of values | `make validation-invalid-value` |
-| 5 | Demonstrate multiple validation blocks on the same input variable | `make validation-uppercase` |
-| 6 | Demonstrate a precondition that checks the relationship between different input variables | `make precondition-failure` |
-| 7 | Apply a valid configuration and demonstrate the guarantee enforced by the resource postcondition | `make postcondition-success` |
-| 8 | Show the installed Terraform core version and selected provider versions | `make version` |
-| 9 | Show the provider requirements of the root configuration and its modules | `make providers` |
-| 10 | Revisit the `null_resource`, its triggers, and its `local-exec` provisioner during the "Beyond Terraform Modules" discussion | `make apply-valid` |
+| 3 | Show the installed Terraform core version and selected provider versions | `make version` |
+| 4 | Show the provider requirements of the root configuration and its modules | `make providers` |
+| 5  | Revisit the `null_resource`, its triggers, and its `local-exec` provisioner during the "Beyond Terraform Modules" discussion | `make apply-valid` |
+| 6 | Introduce input variables, module composition, outputs, and the valid baseline configuration | `make plan` |
+| 7 | Demonstrate an input validation that restricts a variable to an allowed set of values | `make validation-invalid-value` |
+| 8 | Demonstrate multiple validation blocks on the same input variable | `make validation-uppercase` |
+| 9 | Demonstrate a precondition that checks the relationship between different input variables | `make precondition-failure` |
+| 10 | Apply a valid configuration and demonstrate the guarantee enforced by the resource postcondition | `make postcondition-success` |
 | 11 | Inspect the values recorded in the `null_resource` triggers | `make output-triggers` |
 
 ## Presentation Notes
